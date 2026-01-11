@@ -10,6 +10,7 @@ local function add_unicolor_groups(name, color)
       end
   end
   groups["unicolor_" .. color] = 1
+  groups["not_in_creative_inventory"] = 0
   core.override_item(name, {
     groups = groups
   })
