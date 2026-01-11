@@ -35,3 +35,38 @@ add_unicolor_groups("dye:grey", "grey")
 add_unicolor_groups("dye:pink", "light_red")
 add_unicolor_groups("dye:azure", "sky_blue")
 add_unicolor_groups("dye:rose", "red_violet")
+--recipes for white_single, white_light, and white_window
+local w = "dye:white"
+local t = "default:torch"
+local b = "dye:black"
+local g = "default:glass"
+core.register_craft({
+  type = "shaped",
+  output = "colorcubes:white_single",
+  recipe = {
+      {w, w, w},
+      {w, b, w},
+      {w, w, w},
+    } 
+  }
+)
+core.register_craft({
+    type = "shaped",
+    output = "colorcubes:white_window",
+    recipe = {
+      {w, w, w},
+      {w, g, w},
+      {w, w, w}
+    }
+  }
+)
+core.register_craft({
+    type = "shaped",
+    output = "colorcubes:white_light",
+    recipe = {
+      {w, w, w},
+      {w, t, w},
+      {w, w, w}
+    }
+  }
+)
