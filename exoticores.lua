@@ -107,7 +107,7 @@ core.override_item("exoticores:sword_cobaltominite", {
 		groupcaps={
 			snappy={times={[1]=1.60, [2]=0.70, [3]=0.30}, uses=120, maxlevel=3},
 		},
-		damage_groups = {fleshy=9},
+		damage_groups = {fleshy=11},
 	}      
 })
 --SIDERONATRITE
@@ -118,7 +118,7 @@ core.override_item("exoticores:sword_sideronatrite", {
 		groupcaps={
 			snappy={times={[1]=1.30, [2]=0.50, [3]=0.250}, uses=16000, maxlevel=3},
 		},
-		damage_groups = {fleshy=11},
+		damage_groups = {fleshy=20},
 	}
 })
 --EDOYLERITE
@@ -163,7 +163,7 @@ core.override_item("exoticores:axe_lonsdaleite", {
 		groupcaps={
 			choppy={times={[1]=.08, [2]=0.1, [3]=0.12}, uses=6000, maxlevel=2},
 		},
-		damage_groups = {fleshy=14},
+		damage_groups = {fleshy=30},
 	},
 })
 
@@ -174,6 +174,6 @@ core.override_item("exoticores:sword_lonsdaleite", {
 		groupcaps={
 			snappy={times={[1]=0.01, [2]=0.01, [3]=0.01}, uses=6000, maxlevel=10},
 		},
-		damage_groups = {fleshy=15},
+		damage_groups = {fleshy=50},
 	}
 })
