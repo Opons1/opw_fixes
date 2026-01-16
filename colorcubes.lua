@@ -1,5 +1,3 @@
---Colorcubes fix
-if colorcubes and unifieddyes then
 --for color cubes to have recipes
 local function add_unicolor_groups(name, color)
   local node_def = core.registered_items[name]
