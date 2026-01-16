@@ -1,3 +1,13 @@
+local colorcubes = core.get_modpath("colorcubes")
+local unifieddyes = core.get_modpath("unifieddyes")
+local exoticores = core.get_modpath("exoticores")
+if exoticores then
+ core.clear_craft({
+    output = "exoticores:lonsdaleite_crystal"
+})
+end
+--Colorcubes fix
+if colorcubes and unifieddyes then
 --for color cubes to have recipes
 local function add_unicolor_groups(name, color)
   local node_def = core.registered_items[name]
@@ -70,3 +80,4 @@ core.register_craft({
     }
   }
 )
+end
