@@ -122,7 +122,7 @@ core.override_item("exoticores:sword_sideronatrite", {
 	}
 })
 --EDOYLERITE
-core.override_item("exoticores:edoylerite", {
+core.override_item("exoticores:sword_edoylerite", {
     tool_capabilities = {
 		full_punch_interval = 0.3,
 		max_drop_level=1,
