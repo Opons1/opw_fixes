@@ -5,6 +5,7 @@ local colorcubes = core.get_modpath("colorcubes")
 local unifieddyes = core.get_modpath("unifieddyes")
 local exoticores = core.get_modpath("exoticores")
 local xdecor = core.get_modpath("xdecor")
+local industrious = core.get_modpath("industrious")
 --Exoticores modifications to spawn rates and nerfs
 if exoticores then dofile(mp.."/exoticores.lua") end
 --Colorcubes fix to add recipes for the dyed versions
@@ -22,4 +23,7 @@ if xdecor then
         {"","",""},
       }
   })
+end
+if industrious then
+  core.clear_craft({output = "industrious:spade_steel"})
 end
