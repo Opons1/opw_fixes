@@ -32,6 +32,7 @@ if cucina_vegana then
             {"dye:yellow", "cucina_vegana:soy_milk", "cucina_vegana:soy_milk"},
         }
     })
+end
 if xdecor and pixelfurniture then
     core.clear_craft({output = "xdecor:woodframed_glass"})
     core.register_craft({
