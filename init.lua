@@ -114,12 +114,3 @@ if farmtools and industrious and basic_materials then
         }
     })
 end
-if industrialtest and technic then
-    core.clear_craft({output = "technic:cast_iron_ingot"})
-    core.register_craft({
-        output = "technic:cast_iron_ingot",
-        type = "cooking",
-        recipe = "industrialtest:refined_iron_ingot",
-        cooktime = 1,
-    })
-end
