@@ -1,6 +1,7 @@
 --modpath
 local mp = core.get_modpath("opw_fixes")
 --mods
+local cucina_vegana = core.get_modpath("cucina_vegana")
 local colorcubes = core.get_modpath("colorcubes")
 local unifieddyes = core.get_modpath("unifieddyes")
 local exoticores = core.get_modpath("exoticores")
@@ -18,6 +19,19 @@ if exoticores then dofile(mp.."/exoticores.lua") end
 --Colorcubes fix to add recipes for the dyed versions
 if colorcubes and unifieddyes then dofile(mp.."/colorcubes.lua") end
 --change xdecor bowl recipe for wooden bucket
+if cucina_vegana then 
+    core.register_craft({
+        output = "cucina_vegana:imitation_cheese",
+        recipe = {
+            {"dye:orange", "cucina_vegana:imitation_butter", "cucina_vegana:imitation_butter"},
+        }
+    })
+    core.register_craft({
+        output = "cucina_vegana:imitation_butter",
+        recipe = {
+            {"dye:yellow", "cucina_vegana:soy_milk", "cucina_vegana:soy_milk"},
+        }
+    })
 if xdecor and pixelfurniture then
     core.clear_craft({output = "xdecor:woodframed_glass"})
     core.register_craft({
