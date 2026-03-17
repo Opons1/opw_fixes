@@ -43,6 +43,7 @@ if cucina_vegana then
             {"dye:yellow", "cucina_vegana:soy_milk", "cucina_vegana:soy_milk"},
         }
     })
+end
 if xdecor and pixelfurniture then
     core.clear_craft({output = "xdecor:woodframed_glass"})
     core.register_craft({
@@ -123,14 +124,5 @@ if farmtools and industrious and basic_materials then
             {"default:steel_ingot","basic_materials:steel_bar","default:steel_ingot"},
             {"","group:stick",""},
         }
-    })
-end
-if industrialtest and technic then
-    core.clear_craft({output = "technic:cast_iron_ingot"})
-    core.register_craft({
-        output = "technic:cast_iron_ingot",
-        type = "cooking",
-        recipe = "industrialtest:refined_iron_ingot",
-        cooktime = 1,
     })
 end
