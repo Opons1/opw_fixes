@@ -14,6 +14,17 @@ local basic_materials = core.get_modpath("basic_materials")
 local pixelfurniture = core.get_modpath("pixelfurniture")
 local industrialtest = core.get_modpath("industrialtest")
 local technic = core.get_modpath("technic")
+local darkage = core.get_modpath("darkage")
+if darkage and technic then
+    core.register_craft({
+        output = "technic:water_mill",
+        recipe = {
+            {"darkage:marble", "default:diamond", "darkage:marble"},
+            {"group:wood", "technic:machine_casing", "group:wood"},
+            {"darkage:marble", "technic:lv_cable", "darkage:marble"},
+        }
+    })
+end
 --Exoticores modifications to spawn rates and nerfs
 if exoticores then dofile(mp.."/exoticores.lua") end
 --Colorcubes fix to add recipes for the dyed versions
