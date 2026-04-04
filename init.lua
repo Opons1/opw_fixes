@@ -15,6 +15,10 @@ local pixelfurniture = core.get_modpath("pixelfurniture")
 local industrialtest = core.get_modpath("industrialtest")
 local technic = core.get_modpath("technic")
 local darkage = core.get_modpath("darkage")
+local twchests = core.get_modpath("twchests")
+if technic and twchests then
+    core.clear_craft({output = "twchests:chest_bottomless"})
+end
 if darkage and technic then
     core.register_craft({
         output = "technic:water_mill",
