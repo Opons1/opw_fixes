@@ -23,7 +23,7 @@ if technic and twchests then
         recipe = {
             {"technic:mithril_chest", "default:diamondblock", "technic:mithril_chest"},
             {"default:diamondblock", "default:diamondblock", "default:diamondblock"},
-            {"technic:mithril_chest", "default:diamondblock", "technuc:mithril_chest"},
+            {"technic:mithril_chest", "default:diamondblock", "technic:mithril_chest"},
         }
     })
 end
