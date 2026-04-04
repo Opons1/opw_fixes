@@ -31,7 +31,7 @@ if technic and twchests then
             type = "shapeless",
             output = "twchests:chest_bottomless_locked",
             recipe = {"default:steel_ingot", "twchests:chest_bottomless"},
-    )}
+        })
             
 end
 if darkage and technic then
