@@ -18,6 +18,72 @@ local darkage = core.get_modpath("darkage")
 local binocular = core.get_modpath("binoculars")
 local toolrank = core.get_modpath("toolranks")
 local blazing_tools = core.get_modpath("blazing_tools")
+local x_bows_extras = core.get_modpath("x_bows_extras")
+if x_bows_extras then
+    core.clear_craft({output = "x_bows_extras:arrow_cluster"})
+    core.register_craft({
+        output = "x_bows_extras:arrow_cluster",
+        recipe = {
+            {"x_bows:quiver", "default:mese_crystal", "x_bows:quiver"},
+            {"x_bows:quiver", "default:stick", "x_bows:quiver"},
+            {"x_bows:quiver", "default:wool", "x_bows:quiver"},
+        }
+    })
+    core.clear_craft({output = "x_bows_extras:arrow_diamond_tipped_poison"})
+    core.register_craft({
+        output = "x_bows_extras:arrow_diamond_tipped_poison",
+        type = "shapeless",
+        recipe = {"underworlds:bucket_poisonous_water", "x_bows:arrow_diamond"},
+        replacements = {
+            {"underworlds:bucket_poisonous_water", "bucket:bucket_empty"}
+        }
+    })
+    core.clear_craft({output = "x_bows_extras:arrow_healing"})
+    core.register_craft({
+        output = "x_bows_extras:arrow_healing 4",
+        type = "shapeless",
+        recipe = {
+            {"x_bows:arrow_wood", "livingcaves:healing_soup", "x_bows:arrow_wood", "x_bows:arrow_wood"}
+        }
+    })
+    core.clear_craft({output = "x_bows_extras:arrow_lightning"})
+    core.register_craft({
+        output = "x_bows_extras:arrow_lightning",
+        recipe = {
+            {"", "birthstones:topaz", ""},
+            {"", "group:stick", ""},
+            {"", "farming:string", ""},
+        }
+    })
+    core.clear_craft({output = "x_bows_extras:arrow_rip"})
+    core.clear_craft({output = "x_bows_extras:arrow_teleport"})
+    core.register_craft({
+        output = "x_bows_extras:arrow_teleport",
+        recipe = {
+            {"", "teleport_potion:potion", ""},
+            {"", "group:stick", ""},
+            {"", "farming:string", ""},
+        }
+    })
+    core.clear_craft({output = "x_bows_extras:bazooka"})
+    core.register_craft({
+        output = "x_bows_extras:bazooka",
+        recipe = {
+            {"", "technic:cast_iron_block", "default:coalblock"},
+            {"technic:cast_iron_block", "mesecons_pistons:piston_normal_off", "group:stick"},
+            {"mesecons_button:button_off", "group:stick", ""},
+        }
+    })
+    core.clear_craft({output = "x_bows_extras:bazooka_bullet"})
+    core.register_craft({
+        output = "x_bows_extras:bazooka_bullet",
+        recipe = {
+            {"dye:dark_green", "technic:composite_plate", "techage:gun_powder"},
+            {"technic:composite_plate", "tnt:tnt", "technic:composite_plate"},
+            {"techage:gun_powder", "technic:composite_plate", "dye:yellow"},
+        }
+    })
+end
 if toolrank then
     if blazing_tools then
         toolranks.add_tool("blazing_tools:axe_blazing")
