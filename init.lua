@@ -44,7 +44,7 @@ if x_bows_extras then
         output = "x_bows_extras:arrow_healing 4",
         type = "shapeless",
         recipe = {
-            {"x_bows:arrow_wood", "livingcaves:healing_soup", "x_bows:arrow_wood", "x_bows:arrow_wood"}
+            "x_bows:arrow_wood", "livingcaves:healing_soup", "x_bows:arrow_wood", "x_bows:arrow_wood"
         }
     })
     core.clear_craft({output = "x_bows_extras:arrow_lightning"})
