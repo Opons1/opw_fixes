@@ -27,7 +27,7 @@ if x_bows_extras then
         recipe = {
             {"x_bows:quiver", "default:mese_crystal", "x_bows:quiver"},
             {"x_bows:quiver", "default:stick", "x_bows:quiver"},
-            {"x_bows:quiver", "default:wool", "x_bows:quiver"},
+            {"x_bows:quiver", "wool:white", "x_bows:quiver"},
         }
     })
     core.clear_craft({output = "x_bows_extras:arrow_diamond_tipped_poison"})
@@ -44,7 +44,7 @@ if x_bows_extras then
         output = "x_bows_extras:arrow_healing 4",
         type = "shapeless",
         recipe = {
-            "x_bows:arrow_wood", "livingcaves:healing_soup", "x_bows:arrow_wood", "x_bows:arrow_wood"
+            "x_bows:arrow_wood", "livingcaves:healingsoup", "x_bows:arrow_wood", "x_bows:arrow_wood"
         }
     })
     core.clear_craft({output = "x_bows_extras:arrow_lightning"})
