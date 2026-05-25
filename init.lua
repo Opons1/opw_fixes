@@ -25,6 +25,25 @@ if binocular then
     end
 end
 
+local twchests = core.get_modpath("twchests")
+if technic and twchests then
+    core.clear_craft({output = "twchests:chest_bottomless"})
+    core.clear_craft({output = "twchests:chest_bottomless_locked"})
+    core.register_craft({
+        output = "twchests:chest_bottomless",
+        recipe = {
+            {"technic:mithril_chest", "default:diamondblock", "technic:mithril_chest"},
+            {"default:diamondblock", "default:diamondblock", "default:diamondblock"},
+            {"technic:mithril_chest", "default:diamondblock", "technic:mithril_chest"},
+        }
+    })
+    core.register_craft({
+            type = "shapeless",
+            output = "twchests:chest_bottomless_locked",
+            recipe = {"default:steel_ingot", "twchests:chest_bottomless"},
+        })
+            
+end
 if darkage and technic then
     core.register_craft({
         output = "technic:water_mill",
