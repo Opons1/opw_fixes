@@ -19,6 +19,7 @@ local binocular = core.get_modpath("binoculars")
 local toolrank = core.get_modpath("toolranks")
 local blazing_tools = core.get_modpath("blazing_tools")
 local x_bows_extras = core.get_modpath("x_bows_extras")
+local dirt_tools = core.get_modpath("dirt_tools")
 if x_bows_extras then
     core.clear_craft({output = "x_bows_extras:arrow_cluster"})
     core.register_craft({
@@ -90,6 +91,12 @@ if toolrank then
         toolranks.add_tool("blazing_tools:pick_blazing")
         toolranks.add_tool("blazing_tools:shovel_blazing")
         toolranks.add_tool("blazing_tools:sword_blazing")
+    end
+    if dirt_tools then
+        toolranks.add_tool("dirt_tools:axe")
+        toolranks.add_tool("dirt_tools:pick")
+        toolranks.add_tool("dirt_tools:shovel")
+        toolranks.add_tool("dirt_tools:sword")
     end
 end
 if binocular then
