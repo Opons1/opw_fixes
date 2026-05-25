@@ -16,6 +16,16 @@ local industrialtest = core.get_modpath("industrialtest")
 local technic = core.get_modpath("technic")
 local darkage = core.get_modpath("darkage")
 local binocular = core.get_modpath("binoculars")
+local toolrank = core.get_modpath("toolranks")
+local blazing_tools = core.get_modpath("blazing_tools")
+if toolrank then
+    if blazing_tools then
+        toolranks.add_tool("blazing_tools:axe_blazing")
+        toolranks.add_tool("blazing_tools:pick_blazing")
+        toolranks.add_tool("blazing_tools:shovel_blazing")
+        toolranks.add_tool("blazing_tools:sword_blazing")
+    end
+end
 if binocular then
     function binoculars.update_player_property(player)
 	    local new_zoom_fov = 15
