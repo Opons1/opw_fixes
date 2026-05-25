@@ -20,6 +20,19 @@ local toolrank = core.get_modpath("toolranks")
 local blazing_tools = core.get_modpath("blazing_tools")
 local x_bows_extras = core.get_modpath("x_bows_extras")
 local dirt_tools = core.get_modpath("dirt_tools")
+local replacer = core.get_modpath("replacer")
+if replacer then
+    core.clear_craft({output = "replacer:replacer"})
+    core.clear_craft({output = "replacer:replacer_technic"})
+    core.register_craft({
+        output = "replacer:replacer_technic",
+        recipe = {
+            {"technic_many_machines:radiant_alloy_plate", "technic:control_logic_unit", "technic_many_machines:radiant_alloy_plate"},
+            {"technic:mining_drill_mk3", "technic:blue_energy_crystal", "technic:constructor_mk3_off"},
+            {"technic_many_machines:radiant_alloy_plate", "mesecons_detector:node_detector_off", "technic_many_machines:radiant_alloy_plate"},
+        }
+    })
+end
 if x_bows_extras then
     core.clear_craft({output = "x_bows_extras:arrow_cluster"})
     core.register_craft({
