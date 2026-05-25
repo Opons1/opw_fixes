@@ -15,6 +15,16 @@ local pixelfurniture = core.get_modpath("pixelfurniture")
 local industrialtest = core.get_modpath("industrialtest")
 local technic = core.get_modpath("technic")
 local darkage = core.get_modpath("darkage")
+local binocular = core.get_modpath("binoculars")
+if binocular then
+    function binoculars.update_player_property(player)
+	    local new_zoom_fov = 15
+	    if player:get_properties().zoom_fov ~= new_zoom_fov then
+		    player:set_properties({zoom_fov = new_zoom_fov})
+	    end
+    end
+end
+
 if darkage and technic then
     core.register_craft({
         output = "technic:water_mill",
