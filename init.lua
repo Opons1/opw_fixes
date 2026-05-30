@@ -21,6 +21,15 @@ local blazing_tools = core.get_modpath("blazing_tools")
 local x_bows_extras = core.get_modpath("x_bows_extras")
 local dirt_tools = core.get_modpath("dirt_tools")
 local replacer = core.get_modpath("replacer")
+local darkage = core.get_modpath("darkage")
+if darkage then
+    core.override_item("darkage:chalked_bricks_with_plaster", {
+        drop = "darkage:chalked_bricks_with_plaster"
+    })
+    core.override_item("darkage:cobble_with_plaster", {
+        drop = "darkage:cobble_with_plaster"
+    })
+end
 if replacer then
     core.clear_craft({output = "replacer:replacer"})
     core.clear_craft({output = "replacer:replacer_technic"})
