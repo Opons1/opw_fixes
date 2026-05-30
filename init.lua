@@ -252,13 +252,13 @@ if farmtools and industrious and basic_materials then
     })
 end
 -- Override core.play_sound to prevent server crashes
-local core_play_sound = core.play_sound
-core.play_sound = function(spec, parameters, ephermal)
+local core_sound_play = core.sound_play
+core.sound_play = function(spec, parameters, ephermal)
 	local obj_arg_type = type(parameters.object)
 	if obj_arg_type == "userdata" or obj_arg_type == "nil" then
-		core_play_sound(spec, parameters, ephermal)
+		core_sound_play(spec, parameters, ephermal)
 	elseif obj_arg_type == "table" and type(parameters.object.get_pos) == "function" then
-		core_play_sound(spec, {
+		core_sound_play(spec, {
 				gain = parameters.gain,
 				pitch = parameters.pitch,
 				fade = parameters.fade,
