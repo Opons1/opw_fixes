@@ -23,6 +23,8 @@ local dirt_tools = core.get_modpath("dirt_tools")
 local replacer = core.get_modpath("replacer")
 local has_techage = core.get_modpath("techage")
 local nyftyblocks = core.get_modpath("nyftyblocks")
+local has_areas = core.get_modpath("areas")
+local has_xp_redo = core.get_modpath("xp_redo")
 local it = {
     castiron = "technic:cast_iron_ingot"
 }
@@ -184,6 +186,7 @@ if darkage and technic then
         }
     })
 end
+if has_areas and has_xp_redo then dofile(mp.."/areas.lua") end
 --Exoticores modifications to spawn rates and nerfs
 if exoticores then dofile(mp.."/exoticores.lua") end
 --Colorcubes fix to add recipes for the dyed versions
