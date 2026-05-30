@@ -23,6 +23,20 @@ local dirt_tools = core.get_modpath("dirt_tools")
 local replacer = core.get_modpath("replacer")
 local has_techage = core.get_modpath("techage")
 local nyftyblocks = core.get_modpath("nyftyblocks")
+local it = {
+    castiron = "technic:cast_iron_ingot"
+}
+if nyftyblocks then
+    core.clear_craft({output = "nyftyblocks:metal_frame"})
+    core.register_craft({
+        output = "nyftyblocks:metal_frame 4",
+        recipe = {
+            {it.castiron, it.castiron, it.castiron},
+            {it.castiron, "", it.castiron},
+            {it.castiron, it.castiron, it.castiron},
+        }
+    })
+end
 if has_techage then
     if nyftyblocks then
         core.clear_craft({output = "nyftyblocks:terracotta"})
