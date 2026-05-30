@@ -21,7 +21,18 @@ local blazing_tools = core.get_modpath("blazing_tools")
 local x_bows_extras = core.get_modpath("x_bows_extras")
 local dirt_tools = core.get_modpath("dirt_tools")
 local replacer = core.get_modpath("replacer")
-local darkage = core.get_modpath("darkage")
+local has_techage = core.get_modpath("techage")
+local nyftyblocks = core.get_modpath("nyftyblocks")
+if has_techage then
+    if nyftyblocks then
+        core.clear_craft({output = "nyftyblocks:terracotta"})
+        techage.furnace.register_recipe({
+	        output = "nyftyblocks:terracotta 4",
+	        recipe = {"default:clay 4"},
+	        time = 1,
+        }) 
+    end
+end
 if darkage then
     core.override_item("darkage:chalked_bricks_with_plaster", {
         drop = "darkage:chalked_bricks_with_plaster"
