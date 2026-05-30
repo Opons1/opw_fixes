@@ -251,7 +251,7 @@ if farmtools and industrious and basic_materials then
         }
     })
 end
--- Override core.play_sound to prevent server crashes
+-- Override core.sound_play to prevent server crashes
 local core_sound_play = core.sound_play
 core.sound_play = function(spec, parameters, ephermal)
 	local obj_arg_type = type(parameters.object)
