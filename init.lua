@@ -256,9 +256,9 @@ local core_sound_play = core.sound_play
 core.sound_play = function(spec, parameters, ephermal)
 	local obj_arg_type = type(parameters.object)
 	if obj_arg_type == "userdata" or obj_arg_type == "nil" then
-		core_sound_play(spec, parameters, ephermal)
+		return core_sound_play(spec, parameters, ephermal)
 	elseif obj_arg_type == "table" and type(parameters.object.get_pos) == "function" then
-		core_sound_play(spec, {
+		return core_sound_play(spec, {
 				gain = parameters.gain,
 				pitch = parameters.pitch,
 				fade = parameters.fade,
