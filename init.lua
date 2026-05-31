@@ -25,6 +25,7 @@ local has_techage = core.get_modpath("techage")
 local nyftyblocks = core.get_modpath("nyftyblocks")
 local has_areas = core.get_modpath("areas")
 local has_xp_redo = core.get_modpath("xp_redo")
+local has_travelnet = core.get_modpath("travelnet")
 local it = {
     castiron = "technic:cast_iron_ingot"
 }
@@ -308,4 +309,8 @@ core.sound_play = function(spec, parameters, ephermal)
 				max_hear_distance = parameters.max_hear_distance
 		}, ephermal)
 	end
+end
+
+if has_travelnet then
+    dofile(mp.."/travelnet.lua")
 end
