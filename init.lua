@@ -26,6 +26,8 @@ local nyftyblocks = core.get_modpath("nyftyblocks")
 local has_areas = core.get_modpath("areas")
 local has_xp_redo = core.get_modpath("xp_redo")
 local has_travelnet = core.get_modpath("travelnet")
+local has_digtron = core.get_modpath("digtron")
+dofile(mp.."/boom.lua")
 local it = {
     castiron = "technic:cast_iron_ingot"
 }
