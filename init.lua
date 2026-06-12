@@ -27,6 +27,8 @@ local has_areas = core.get_modpath("areas")
 local has_xp_redo = core.get_modpath("xp_redo")
 local has_travelnet = core.get_modpath("travelnet")
 local has_digtron = core.get_modpath("digtron")
+local has_terumet = core.get_modpath("terumet")
+if has_terumet then dofile(mp .. "/terumet.lua") end
 core.register_craft({
     output = "scifi_nodes:rough",
     recipe = {
