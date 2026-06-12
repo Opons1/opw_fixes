@@ -27,6 +27,12 @@ local has_areas = core.get_modpath("areas")
 local has_xp_redo = core.get_modpath("xp_redo")
 local has_travelnet = core.get_modpath("travelnet")
 local has_digtron = core.get_modpath("digtron")
+minetest.register_craft({
+    output = "scifi_nodes:rough",
+    recipe = {
+        {"scifi_nodes:lighttop", "compression:default_cobble_compressed_level_1"}
+    }
+})
 dofile(mp.."/boom.lua")
 local it = {
     castiron = "technic:cast_iron_ingot"
