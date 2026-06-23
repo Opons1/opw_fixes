@@ -151,6 +151,7 @@ if toolrank then
         toolranks.add_tool("blazing_tools:pick_blazing")
         toolranks.add_tool("blazing_tools:shovel_blazing")
         toolranks.add_tool("blazing_tools:sword_blazing")
+        toolranks.add_tool("blazing_tools:multitool_blazing")
     end
     if dirt_tools then
         toolranks.add_tool("dirt_tools:axe")
