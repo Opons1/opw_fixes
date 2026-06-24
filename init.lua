@@ -28,6 +28,7 @@ local has_xp_redo = core.get_modpath("xp_redo")
 local has_travelnet = core.get_modpath("travelnet")
 local has_digtron = core.get_modpath("digtron")
 local has_terumet = core.get_modpath("terumet")
+local has_shuriken = core.get_modpath("shuriken")
 if has_terumet then dofile(mp .. "/terumet.lua") end
 core.register_craft({
     output = "scifi_nodes:rough",
@@ -39,6 +40,41 @@ dofile(mp.."/boom.lua")
 local it = {
     castiron = "technic:cast_iron_ingot"
 }
+if has_shuriken then
+    local shurikens = {
+        "bronze",
+        "diamond",
+        "gold",
+        "mese",
+        "steel",
+        "stone"
+    }
+
+    local items = {
+        "default:bronze_ingot",
+        "default:diamond",
+        "default:gold_ingot",
+        "default:mese_crystal",
+        "default:steel_ingot",
+        "group:cobble"
+    }
+
+    for index, shuriken in ipairs(shurikens) do
+        local item = "shurikens:" .. shuriken
+        local ig = items[index]
+
+        core.clear_craft({output = item})
+
+        core.register_craft({
+            output = item .. " 10",
+            recipe = {
+                {"", ig, ""},
+                {ig, it.castiron, ig},
+                {"", ig, ""}
+            }
+        })
+    end
+end
 if nyftyblocks then
     core.clear_craft({output = "nyftyblocks:metal_frame"})
     core.register_craft({
