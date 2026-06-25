@@ -30,7 +30,9 @@ local has_digtron = core.get_modpath("digtron")
 local has_terumet = core.get_modpath("terumet")
 local has_shuriken = core.get_modpath("shuriken")
 if has_terumet then dofile(mp .. "/terumet.lua") end
-dofile(mp .. "/overrides.lua")
+
+--dofile(mp .. "/overrides.lua")
+
 core.register_craft({
     output = "scifi_nodes:rough",
     recipe = {
