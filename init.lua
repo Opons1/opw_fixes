@@ -32,7 +32,7 @@ local has_shuriken = core.get_modpath("shuriken")
 if has_terumet then dofile(mp .. "/terumet.lua") end
 
 --dofile(mp .. "/overrides.lua")
-
+if has_techage then dofile(mp .. "/techage.lua") end
 core.register_craft({
     output = "scifi_nodes:rough",
     recipe = {
