@@ -22,6 +22,8 @@ local nodes = {
     "digtron:edge_panel",
     "digtron:empty_crate",
     "digtron:empty_locked_crate",
+    "digtron:loaded_crate",
+    "digtron:loaded_locked_crate",
     "digtron:fuelstore",
     "digtron:intermittent_digger",
     "digtron:intermittent_soft_digger",

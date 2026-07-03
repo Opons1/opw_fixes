@@ -100,3 +100,64 @@ core.override_chatcommand("area_info", {
 		return true, table.concat(lines, "\n")
     end
 })
+
+if core.get_modpath("protector") then
+	local old_can_protect_areas = areas.canPlayerAddArea
+	function areas:canPlayerAddArea(pos1, pos2, name)
+		local can_skip = core.check_player_privs(name, "protection_bypass")
+		if not can_skip then
+			local r = protector.radius
+			local bottomleftcheck = {}
+			local toprightcheck = {}
+			for i, coord in ipairs({"x", "y", "z"}) do
+				if pos1[coord] > pos2[coord] then
+					toprightcheck[coord] = pos1[coord] + r
+					bottomleftcheck[coord] = pos2[coord] - r
+				else
+					toprightcheck[coord] = pos2[coord] + r
+					bottomleftcheck[coord] = pos1[coord] - r
+				end
+			end
+			--thanks to tenplus1 for original code in protector redo mod(i copied this from there)
+			local pos = core.find_nodes_in_area(bottomleftcheck, toprightcheck,
+				{"protector:protect", "protector:protect2", "protector:protect_hidden"})
+
+			for n = 1, #pos do
+				local meta = core.get_meta(pos[n])
+				local owner = meta:get_string("owner") or ""
+				local members = meta:get_string("members") or ""
+				local memberlist
+				-- node change and digger isn't owner
+				if owner ~= name then
+					local member_found
+					memberlist = members:split(" ")
+					for _, n in pairs(memberlist) do
+						if n == name then 
+							member_found = true
+						end
+					end	
+					if not member_found then
+						return false, "This area is already protected by a protector block!"
+					end	
+				end
+			end
+		end
+    	return old_can_protect_areas(self, pos1, pos2, name)	
+	end
+	local old_can_dig = protector.can_dig
+	protector.can_dig = function(r, pos, digger, onlyowner, infolevel)
+		local result = old_can_dig(r, pos, digger, onlyowner, infolevel)
+		if infolevel == 3 and result == true then
+			local r = protector.radius
+			local corner1 = {x = pos.x + r, y = pos.y + r, z = pos.z + r}
+			local corner2 = {x = pos.x - r, y = pos.y - r, z = pos.z - r}
+			local can, id = areas:canInteractInArea(corner1, corner2, digger)
+			if not can then
+				local area = areas.areas[id]
+				result = false
+				core.chat_send_player(digger, "The area intersects with " .. area.name .. " " .. id .. " " .. " by " .. area.owner)
+			end
+		end
+		return result
+	end
+end
