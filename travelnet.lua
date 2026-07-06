@@ -24,3 +24,20 @@ core.override_item("opw_fixes:travelnet_protected", {
     end,
     description = "Protected Travelnet-Box"
 })
+
+
+if core.get_modpath("birthstones") then
+    core.clear_craft({recipe = {
+        {"default:glass", "default:steel_ingot", "default:glass"},
+        {"default:glass", "default:mese", "default:glass"},
+        {"default:glass", "default:steel_ingot", "default:glass"}
+    }})
+    core.register_craft({
+        output = "travelnet:travelnet",
+        recipe = {
+            {"default:glass", "birthstones:opal", "default:glass"},
+            {"default:glass", "default:mese", "default:glass"},
+            {"default:glass", "birthstones:opal", "default:glass"}
+        }
+    })
+end
