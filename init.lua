@@ -33,6 +33,7 @@ if has_terumet then dofile(mp .. "/terumet.lua") end
 
 --dofile(mp .. "/overrides.lua")
 if has_techage then dofile(mp .. "/techage.lua") end
+if has_digtron then dofile(mp .. "/digtron.lua") end
 core.register_craft({
     output = "scifi_nodes:rough",
     recipe = {
