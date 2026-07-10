@@ -34,6 +34,7 @@ if has_terumet then dofile(mp .. "/terumet.lua") end
 --dofile(mp .. "/overrides.lua")
 if has_techage then dofile(mp .. "/techage.lua") end
 if has_digtron then dofile(mp .. "/digtron.lua") end
+if has_travelnet then dofile(mp.."/travelnet.lua") end
 core.register_craft({
     output = "scifi_nodes:rough",
     recipe = {
@@ -360,8 +361,4 @@ core.sound_play = function(spec, parameters, ephermal)
 				max_hear_distance = parameters.max_hear_distance
 		}, ephermal)
 	end
-end
-
-if has_travelnet then
-    dofile(mp.."/travelnet.lua")
 end
