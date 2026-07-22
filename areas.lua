@@ -7,19 +7,36 @@ local function calculate_area_amount(xp)
 end
 --code taken from areas starts here
 core.register_on_mods_loaded(function()
-	areas:registerProtectionCondition(function(pos1, pos2, name) 
-        local xp = xp_redo.get_xp(name)
+
+	local func = function(pos1, pos2, name)
+		local privs = minetest.get_player_privs(name)
+		local count = 0
+		for _, area in pairs(areas.areas) do
+			if area.owner == name then
+				count = count + 1
+			end
+		end
+	local max_areas = privs.areas_high_limit and 
+	      areas.config.self_protection_max_areas_high or calculate_area_amount(xp_redo.get_xp(name))
+
         local count = 0
 	    for _, area in pairs(areas.areas) do
 		    if area.owner == name then
 			    count = count + 1
 		    end
 	    end
-        local maxcount = calculate_area_amount(xp)
-        if count < maxcount then
-            return true
+        if count > max_areas then
+            return false, S("You have reached the maximum amount of areas that you are allowed to protect.")
         end
-	end)
+	end
+
+	local debug_info = debug.getinfo(func, "S")
+	areas.callback_origins[func] = {
+		mod = core.get_current_modname() or "??",
+		source = debug_info.short_src or "??",
+		line = debug_info.linedefined or "??"
+	}
+	areas.registered_protection_conditions[3] = func
 end)
 
 core.override_chatcommand("area_info", {
