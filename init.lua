@@ -29,8 +29,8 @@ local has_travelnet = core.get_modpath("travelnet")
 local has_digtron = core.get_modpath("digtron")
 local has_terumet = core.get_modpath("terumet")
 local has_shuriken = core.get_modpath("shuriken")
+local has_sumpf = core.get_modpath("sumpf")
 if has_terumet then dofile(mp .. "/terumet.lua") end
-
 --dofile(mp .. "/overrides.lua")
 if has_techage then dofile(mp .. "/techage.lua") end
 if has_digtron then dofile(mp .. "/digtron.lua") end
@@ -45,6 +45,21 @@ dofile(mp.."/boom.lua")
 local it = {
     castiron = "technic:cast_iron_ingot"
 }
+if has_sumpf then
+    core.clear_craft({
+        recipe = {
+            {"sumpf:junglestone", "sumpf:junglestone"},
+            {"sumpf:junglestone", "sumpf:junglestone"}
+        },
+    })
+    core.register_craft({
+        output = "sumpf:junglestonebrick 4",
+        recipe = {
+            {"sumpf:junglestone", "sumpf:junglestone"},
+            {"sumpf:junglestone", "sumpf:junglestone"}
+        }
+    })
+end
 if has_shuriken then
     local shurikens = {
         "bronze",
