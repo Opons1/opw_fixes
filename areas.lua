@@ -109,10 +109,17 @@ if core.get_modpath("protector") then
 			local r = protector.radius
 			local bottomleftcheck = {}
 			local toprightcheck = {}
+			local xlen = math.abs(pos1.x - pos2.x) + 2 * r
+			local ylen = math.abs(pos1.y - pos2.y) + 2 * r
+			local zlen = math.abs(pos1.z - pos2.z) + 2 * r
+			if xlen * ylen * zlen > 150000000 then 
+				return false, "Due to a limitation in my code, areas beyond 150000000 blocks in volume cannot be protected without protection_bypass."
+			end
 			for i, coord in ipairs({"x", "y", "z"}) do
 				if pos1[coord] > pos2[coord] then
 					toprightcheck[coord] = pos1[coord] + r
 					bottomleftcheck[coord] = pos2[coord] - r
+
 				else
 					toprightcheck[coord] = pos2[coord] + r
 					bottomleftcheck[coord] = pos1[coord] - r
