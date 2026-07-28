@@ -30,11 +30,25 @@ local has_digtron = core.get_modpath("digtron")
 local has_terumet = core.get_modpath("terumet")
 local has_shuriken = core.get_modpath("shuriken")
 local has_sumpf = core.get_modpath("sumpf")
+local has_lootchests = core.get_modpath("lootchests")
+
 if has_terumet then dofile(mp .. "/terumet.lua") end
 --dofile(mp .. "/overrides.lua")
 if has_techage then dofile(mp .. "/techage.lua") end
 if has_digtron then dofile(mp .. "/digtron.lua") end
 if has_travelnet then dofile(mp.."/travelnet.lua") end
+
+
+if has_lootchests then
+    core.register_craft({
+        output = "default:chest",
+        recipe = {"geomoria_lootchests:chest"}
+    })
+    core.register_craft({
+        output = "default:chest",
+        recipe = {"lootchests_default:ocean_chest"}
+    })
+end
 core.register_craft({
     output = "scifi_nodes:rough",
     recipe = {
