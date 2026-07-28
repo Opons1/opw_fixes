@@ -83,3 +83,46 @@ core.register_craft({
     output = "modern_ish:util_drain_gold",
     recipe = {{"modern_ish:util_drain_wall_gold", "modern_ish:util_drain_wall_gold"}}
 })
+-- lights
+
+core.register_craft({
+    output = "modern_ish:ceiling_light_1",
+    recipe = {
+        {"default:glass", "morelights:bulb"},
+        {"basic_materials:plastic_sheet", "basic_materials:plastic_sheet"}
+    }
+})
+
+core.register_craft({
+    output = "modern_ish:ceiling_light_1_dark",
+    recipe = {{"modern_ish:ceiling_light_1", "dye:black"}}
+})
+
+core.register_craft({
+    output = "modern_ish:ceiling_light_2",
+    recipe = {{"modern_ish:ceiling_light_1"}}
+})
+
+core.register_craft({
+    output = "modern_ish:ceiling_light_2_dark",
+    recipe = {{"modern_ish:ceiling_light_2", "dye:black"}}
+})
+
+core.register_craft({
+    output = "modern_ish:ceiling_light_3",
+    recipe = {{"modern_ish:ceiling_light_2"}}
+})
+
+core.register_craft({
+    output = "modern_ish:ceiling_light_3_dark",
+    recipe = {{"modern_ish:ceiling_light_3", "dye:black"}}
+})
+core.register_craft({
+    output = "modern_ish:ceiling_light_1",
+    recipe = {{"modern_ish:ceiling_light_3"}}
+})
+
+core.register_craft({
+    output = "modern_ish:round_light",
+    recipe = {{"xpanes:pane_flat", "morelights:bulb"}}
+})
