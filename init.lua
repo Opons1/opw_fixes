@@ -44,10 +44,12 @@ if has_modern_ish then dofile(mp .. "/modern_ish.lua") end
 if has_lootchests then
     core.register_craft({
         output = "default:chest",
+        type = "shapeless",
         recipe = {"geomoria_lootchests:chest"}
     })
     core.register_craft({
         output = "default:chest",
+        type = "shapeless",
         recipe = {"lootchests_default:ocean_chest"}
     })
 end
