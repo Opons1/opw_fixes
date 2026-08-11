@@ -41,6 +41,7 @@ if has_digtron then dofile(mp .. "/digtron.lua") end
 if has_travelnet then dofile(mp.."/travelnet.lua") end
 if has_modern_ish then dofile(mp .. "/modern_ish.lua") end
 if has_biofuel then dofile(mp .. "/biofuel.lua") end
+if industrious then dofile(mp .. "/industrious.lua") end
 
 
 
