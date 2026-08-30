@@ -33,6 +33,7 @@ local has_sumpf = core.get_modpath("sumpf")
 local has_lootchests = core.get_modpath("lootchests")
 local has_modern_ish = core.get_modpath("modern_ish")
 local has_biofuel = core.get_modpath("biofuel")
+local has_default = core.get_modpath("default")
 
 if has_terumet then dofile(mp .. "/terumet.lua") end
 --dofile(mp .. "/overrides.lua")
@@ -43,7 +44,12 @@ if has_modern_ish then dofile(mp .. "/modern_ish.lua") end
 if has_biofuel then dofile(mp .. "/biofuel.lua") end
 if industrious then dofile(mp .. "/industrious.lua") end
 
-
+core.register_craft({
+    output = "bones:bones",
+    recipe = {
+        {"bonemeal:bone", "default:gravel", "bonemeal:bone"},
+    }
+})
 
 if has_lootchests then
     core.register_craft({
